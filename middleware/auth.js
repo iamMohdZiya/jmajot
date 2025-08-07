@@ -1,15 +1,6 @@
 const { validateToken } = require('../service/authentication');
 
-/**
- * Checks for an authentication cookie and validates the token.
- * If the token is invalid or the user's role is not in the list of valid roles,
- * it clears the cookie and returns an error response.
- * If the token is valid, it sets the user payload on the request object and calls the next middleware.
- *
- * @param {string} cookieName - The name of the cookie to check for.
- * @param {string[]} [validRoles=[]] - An optional list of valid roles.
- * @returns {Function} An Express middleware function.
- */
+
 function checkForAthenticationCookie(cookieName, validRoles = []) {
   return async (req, res, next) => {
     const tokenCookieValue = req.cookies[cookieName];
@@ -45,7 +36,6 @@ function checkForAthenticationCookie(cookieName, validRoles = []) {
     }
   };
 }
-
 module.exports = {
   checkForAthenticationCookie,
   validateToken

@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['pending', 'approved', 'rejected'],
     default: 'pending'
-  },
+  }
 },
   {
     timestamps: true,  

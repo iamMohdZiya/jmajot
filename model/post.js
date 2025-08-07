@@ -13,8 +13,12 @@ const post = new mongoose.Schema({
     type: String,
     required: true
   },
-//   image + text or text only 
+  // image + text or text only 
   content: {
+    type: String,
+    required: false
+  },
+  image: {
     type: String,
     required: false
   },
